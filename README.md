@@ -7,7 +7,7 @@ of 392 cars given 7 features describing the car. The model for linear basis func
 ∅(𝑥) is the matrix of gaussian basis functions on 𝑥. The following was performed for several basis
 functions in the range of 5:10:95.
 
-                               ![1](imgs/1.png)
+                          ![alt text](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/imgs/img.png)
 
 The basis functions for the training data are used to find the coefficients 𝑤.
 
