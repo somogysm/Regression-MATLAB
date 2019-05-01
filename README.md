@@ -7,11 +7,12 @@ of 392 cars given 7 features describing the car. The model for linear basis func
 ∅(𝑥) is the matrix of gaussian basis functions on 𝑥. The following was performed for several basis
 functions in the range of 5:10:95.
 
-                          ![img 1](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/1.PNG)
+![img 1](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/1.PNG)
 
 The basis functions for the training data are used to find the coefficients 𝑤.
 
-                                           𝑤 = (∅𝑇 ∅)−1 ∅𝑇 𝑦𝑡𝑟𝑎𝑖𝑛
+![img 2](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/2.PNG)
+
 The coefficients are then used to calculate the predicted response variables using the above. The
 training/testing error can be plotted against the number of basis functions used. In the plot, it is seen
 that as the number of basis functions increased the testing error increases. The opposite in shown for
