@@ -19,19 +19,23 @@ that as the number of basis functions increased the testing error increases. The
 the training error, as it continuously decreases. This is most likely occurring due to over fitting, and thus
 regularization is implemented.
 
+![img 3](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/3.PNG)
 
-## Lasso Regularization
+
 Regularization is much like the above process, however the solution for the coefficients are changed,
 where 𝜆 is the regularization coefficient. Regularization was performed for 𝜆 =
 [0.01 0.1 0 1 10 100 1000]
 
-                                        𝑤 = (𝜆𝐼 + ∅𝑇 ∅)−1 ∅𝑇 𝑦𝑡𝑟𝑎𝑖𝑛
+![img 4](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/4.PNG)
+
 10-fold cross-validation was used to decide the best lambda for regularization. A plot of log(𝜆) vs the
 cross-validation error is below. As 𝜆 increases to 1000, the cross-validation error increases. Also, for a
 𝜆=0, the regression simplifies to the non-regularization case. The optimal regularization coefficient for
 this data set seems to be 0.001, having the smallest CV error.
-2.
 
+![img 5](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/5.PNG)
+
+## Lasso Regularization
 A ML estimation regularized with a Lasso regularizer was used to classify data consisting of 91 variables
 regarding songs from the time frame between 1922 and 2011. A function was created with the input of
 the X training data variable, and Y response data, as well as a regularizer coefficient Lambda. The
@@ -44,6 +48,8 @@ a maximum. The number of non-zero coefficients were highest for the smallest val
 however has Lambda approached 1, the number of zero coefficients increased. For Lambda’s above 1,
 majority of the coefficients were zero.
 
+![img 6](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/6.PNG)
+
 ## Logistic Regression
 Logistic regression was implemented in order to classify the species of crab given in the Australian
 Crab dataset. The crab dataset included 8 columns of data with 200 samples. The columns included
@@ -51,33 +57,22 @@ were; Species, Sex, Index, Frontal Lobe Size, Rear Width of the Shell, Carapace 
 and Body Depth. The first 150 samples were used for training data, while the last 50 samples were used
 for testing data. The error function for logistic regression is as follows, along with its gradient. Where h
 is the sigmoid of x and theta.
-                                          𝑚
-                                     1
-                                𝐽 = − ∑ 𝑦𝑙𝑜𝑔(ℎ) + (1 − 𝑦)log(1 − ℎ)
-                                     𝑚
-                                           1
-                                                      𝑚
-                                                1
-                                          ∇𝐽 = − ∑(ℎ − 𝑦)𝑥
-                                                𝑚
-                                                      1
+
+![img 7](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/7.PNG)
 
 Minimizing the above using gradient descent, or MATLABs fminunc function. The appropriate
 coefficients may be found. The classes can then me calculated using the following equation.
-                                                         1
-                                       ypred =
-                                                 (1 + exp(−𝑋𝑡𝑒𝑠𝑡 𝜃))
+
+![img 8](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/8.PNG)
+
 The resulting confusion matrix generated shows that the logistic regression model classified correctly 26
 species in class 1, and 23 species into class 2. However, one sample was misclassified into species 1,
 while it truly belonged to species 2.
-                                                         26 0
-                                     𝑐𝑜𝑛𝑓𝑢𝑠𝑖𝑜𝑛 𝑚𝑎𝑡𝑟𝑖𝑥 = [      ]
-                                                          1 23
 
+![img 9](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/9.PNG)
 
-b) The same process was performed using MATLABs built-in SVM function instead of logistic regression.
+The same process was performed using MATLABs built-in SVM function instead of logistic regression.
 The confusion matrix classified 26 species as class 1, and 24 species as class 2. Resulting in zero
 misclassifications.
-                                                         26 0
-                                     𝑐𝑜𝑛𝑓𝑢𝑠𝑖𝑜𝑛 𝑚𝑎𝑡𝑟𝑖𝑥 = [      ]
-                                                          0 24
+
+![img 10](https://raw.githubusercontent.com/somogysm/Regression-MATLAB/master/imgs/10.PNG)
